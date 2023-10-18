@@ -86,14 +86,28 @@ public class GuessNumber
     //4 - Verifique a resposta da jogada
     public string AnalyzePlay()
     {
-        if (userValue < randomValue) return "Tente um número MAIOR";
-        else if (userValue > randomValue) return "Tente um número MENOR";
-        else return "ACERTOU!";
+        if (userValue < randomValue)
+        {
+            return "Tente um número MAIOR";
+        }
+        else if (userValue > randomValue){
+            return "Tente um número MENOR";
+        }
+        else
+        {
+            gameOver = true;
+            return "ACERTOU!";
+        }
     }
 
     //7 - Adicione uma opção para reiniciar o jogo
     public void RestartGame()
     {
-        throw new NotImplementedException();
+        userValue = 0;
+        randomValue = 0;
+        currentAttempts = 0;
+        gameOver = false;
+        difficultyLevel = 1;
+        maxAttempts = 5;
     }
 }
