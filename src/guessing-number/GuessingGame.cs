@@ -29,7 +29,10 @@ public class GuessNumber
     //1 - Imprima uma mensagem de saudação
     public string Greet()
     {
-        throw new NotImplementedException();
+        string GreetMsg = "";
+        GreetMsg += "---Bem-vindo ao Guessing Game--- /n";
+        GreetMsg += " Para começar, tente adivinhar o número que eu pensei, entre -100 e 100!";
+        return GreetMsg;
     }
 
     //2 - Receba a entrada da pessoa usuária e converta para Int
