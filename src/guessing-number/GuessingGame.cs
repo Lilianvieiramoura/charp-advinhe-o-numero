@@ -41,6 +41,11 @@ public class GuessNumber
     {
         var convert = int.TryParse(userEntry, out userValue);
         currentAttempts++;
+        if (currentAttempts > maxAttempts)
+        {
+            gameOver = true;
+            return "Você excedeu o número máximo de tentativas! Tente novamente.";
+        }
         if(!convert)
         {
             return "Entrada inválida! Não é um número.";
@@ -50,11 +55,6 @@ public class GuessNumber
         {
             userValue = 0;
             return "Entrada inválida! Valor não está no range.";
-        }
-        if (currentAttempts > maxAttempts)
-        {
-            gameOver = true;
-            return "Você excedeu o número máximo de tentativas! Tente novamente.";
         }
         return "Número escolhido!";
         
@@ -70,7 +70,7 @@ public class GuessNumber
     //6 - Adicione níveis de dificuldade
     public string RandomNumberWithDifficult()
     {
-        throw new NotImplementedException();
+        
     }
 
     //4 - Verifique a resposta da jogada
