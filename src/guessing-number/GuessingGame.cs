@@ -22,7 +22,7 @@ public class GuessNumber
     public int maxAttempts = 5;
     public int currentAttempts = 0;
 
-    public int difficultyLevel;
+    public int difficultyLevel = 1;
 
     public bool gameOver;
 
@@ -70,7 +70,17 @@ public class GuessNumber
     //6 - Adicione níveis de dificuldade
     public string RandomNumberWithDifficult()
     {
-        
+        int maxRange = 100;
+        if (difficultyLevel == 2)
+        {
+            maxRange = 500;
+        }
+        else if (difficultyLevel == 3)
+        {
+            maxRange = 1000;
+        }
+        randomValue = random.GetInt(-maxRange, maxRange);
+        return $"A máquina escolheu um número de -{maxRange} à {maxRange}!";
     }
 
     //4 - Verifique a resposta da jogada
